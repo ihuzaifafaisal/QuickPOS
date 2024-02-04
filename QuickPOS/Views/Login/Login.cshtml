@@ -1,0 +1,191 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LOGIN | POS</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/Content/styles.css" />
+    <link rel="stylesheet" href="~/Content/utils.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url("/Content/Media/main_bg_login.jpg");
+            height: 100vh;
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            color: black;
+        }
+
+            body * {
+                color: black;
+            }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+        }
+
+        .site-heading {
+            /* justify-self: flex-start; */
+            /* align-self: flex-start; */
+            color: black;
+            font-size: 2.75em;
+        }
+
+        .site-heading-bdr {
+            width: 40vw;
+            height: 3px;
+            background: rgb(0, 0, 0);
+            background: linear-gradient( 144deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 38%, rgba(255, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100% );
+        }
+
+        .login-heading {
+            color: black;
+            font-size: 1.5em;
+        }
+
+        .login-form-container {
+            padding-top: 21vh;
+            padding-left: 30vw;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            form input {
+                font-size: 1.25em;
+                width: 300px;
+            }
+
+        .btn-container {
+            padding-left: 25px;
+        }
+
+            .btn-container button, .btn-container i {
+                background: none;
+                border: none;
+                background-image: linear-gradient( 144deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 38%, rgba(255, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100% );
+                padding: 4px;
+                border-radius: 50px;
+                color: white;
+            }
+
+        @@keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="site-heading">
+            Quick<span class="clr-red">POS</span>
+            <div class="site-heading-bdr"></div>
+        </div>
+        <div class="login-heading">
+            LOGIN <span class="clr-red">PANEL</span>
+        </div>
+        <div class="login-form-container">
+            <div class="person-picture">
+                <i class="fas fa-user fa-3x" aria-hidden="true"></i>
+            </div>
+            <form action="~/Home/Index">
+                <div class="input-container">
+
+                    <div class="username-container">
+                        <div class="username-label">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="username-input">
+                            <input type="text" name="username" id="username" autofocus required>
+                        </div>
+
+                    </div>
+
+                    <div class="password-container">
+                        <div class="password-label">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="password-input">
+                            <input type="password" name="password" id="password" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container"><button type="submit"><i class="fa fa-sign-in " aria-hidden="true"></i></button></div>
+            </form>
+
+        </div>
+
+    </div>
+    <script>
+      function triggerSignIn() {
+        const btnContainer = document.querySelector('.btn-container');
+        const signInButton = btnContainer.querySelector('button');
+
+        btnContainer.addEventListener('mouseover', () => showSignIn(signInButton));
+        btnContainer.addEventListener('mouseout', () => hideSignIn(signInButton));
+      }
+
+      function showSignIn(button) {
+        const span = document.createElement('span');
+        span.innerText = 'Sign In';
+        span.style.fontSize = '1.25em';
+        span.style.paddingLeft = '5px';
+        span.style.paddingRight = '2px';
+        span.style.color = 'white';
+        span.style.animation = 'slideIn 0.5s ease-in-out';
+        button.appendChild(span);
+      }
+
+      function hideSignIn(button) {
+        const span = button.querySelector('span');
+        if (span) {
+          button.removeChild(span);
+        }
+      }
+
+      // Call the function to initialize event listeners
+      triggerSignIn();
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --default-font-color: white;
+    --content-font-color: black;
+    --default-font-family: 'Poppins', sans-serif;
+    --default-background-color: black;
+    --white-bdr: 1px solid white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--default-font-color);
+    font-family: var(--default-font-family);
+    box-sizing: border-box;
+}
+
+
+header {
+    position: fixed;
+    width: 100%;
+}
+
+    header nav {
+        height: 7vh;
+        background-color: var(--default-background-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
+        header nav .navbar-left {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        header nav .navbar-right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+
+
+            header nav .navbar-right .logout-btn, i {
+                color: red;
+                padding: 5px;
+                background: transparent;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+.logout-btn:hover {
+    border: var(--white-bdr);
+    border-radius: 5px;
+}
+
+aside {
+    margin-top: 7vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid red;
+    justify-content: space-around;
+    background-color: var(--default-background-color);
+    width: 20vw;
+    height: 93vh;
+    font-size: 1.25em;
+}
+
+    aside a {
+        text-decoration: none;
+    }
+
+        aside a:active {
+            text-decoration: underline;
+        }
+
+        aside a:hover {
+            text-shadow: 0px 0px 25px red;
+        }
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 7vh;
+    padding-left: 20vw;
+}
+
+    main *:not(i) {
+        color: var(--content-font-color)
+    }
+
+.dashboard-container {
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    background: url("Media/main_bg.jpg") 10% 75% / cover no-repeat;
+}
+
+.welcome-message {
+    padding-top: 50px;
+    align-self: center;
+    justify-self: center;
+    font-size: 4em;
+}
+
+
+/* @media only screen and (max-width: 768px) {
+    header, aside, main {
+        display: none;
+    }
+
+    body::before {
+        content: "Please use this website on larger devices for a better experience.";
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        justify-content: center;
+        height: 100vh;
+        font-size: 1.5em;
+        color: var(--content-font-color);
+        background: url(main_bg.jpg);
+        background-size: cover;
+    }
+} */
+
+
+/* Suppliers */
+
+
+
+.management-container {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.page-title {
+    align-self: flex-start;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+    .search-bar input {
+        width: 60vw;
+        padding: 10px;
+    }
+
+    .search-bar a {
+        background-color: var(--default-background-color);
+        padding: 5px 35px;
+        border: none;
+        border-radius: 10px;
+        color: var(--default-font-color);
+        text-decoration: none;
+    }
+
+.table-container table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+
+
+    .table-container table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table-container table tr:first-child th:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    .table-container table tr:first-child th:last-child {
+        border-top-right-radius: 10px;
+    }
+
+
+    .table-container table th {
+        background-color: var(--default-background-color);
+        color: white;
+    }
+
+    .table-container table th, td {
+        font-size: 0.75em;
+        padding: 5px;
+        border: 1px solid black;
+    }
+
+    .table-container table td button {
+        color: var(--default-font-color);
+        border: none;
+        border-radius: 5px;
+        padding: 5px 8px;
+    }
+
+    .table-container table tr:hover {
+        background-color: rgb(255, 247, 0);
+    }
+
+.action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.edit-btn, .edit-btn i {
+    background-color: greenyellow;
+    color: var(--content-font-color);
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: black;
+    cursor: pointer;
+}
+
+
+/* Sales */
+
+
+.product-select-bar {
+    width: 50vw;
+}
+
+.quantity-input {
+    width: 10vw !important
+}
+
+.product-table-container table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.product-table-container table {
+    width: 70vw;
+}
+
+    .product-table-container table th {
+        background-color: var(--default-background-color);
+        color: var(--default-font-color);
+    }
+
+    .product-table-container table th, td {
+        font-size: 0.75em;
+        padding: 5px;
+        border: 1px solid black;
+    }
+
+    .product-table-container table td button {
+        color: var(--default-font-color);
+        border: none;
+        border-radius: 5px;
+        padding: 5px 8px;
+    }
+
+    .product-table-container table tr:hover {
+        background-color: rgb(255, 247, 0);
+    }
+
+.total-amount-label {
+    border-radius: 0;
+    background-color: white !important;
+    color: gray !important;
+}
+
+
+.save-invoice-btn {
+    text-decoration: none;
+    padding: 5px 300px 5px 300px;
+    background-color: rgb(47, 182, 47);
+    color: white;
+    border-radius: 5px;
+}
+
+    .save-invoice-btn i {
+        color: white;
+    }
+
+
+    .save-invoice-btn:hover {
+        background-color: rgb(93, 215, 93);
+    }

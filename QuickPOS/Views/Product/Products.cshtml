@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<main>
+    <div class="management-container">
+        <div class="page-title">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Products |<a href="~/Home/Index" class="back-btn"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Go Back</a>
+        </div>
+
+        <div class="search-bar">
+            <input type="search" name="search_products" id="search-product" placeholder="🔍 Search for Products...">
+            <a href="#" id="add-btn" class="add-btn">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>  Add Product
+            </a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Supplier</th>
+                <th>Original Price</th>
+                <th>Selling Price</th>
+                <th>Quantity Left</th>
+                <th>Quantity Sold</th>
+                <th>Total Stock Value</th>
+                <th>Total Sales</th>
+
+                <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Not Fizzy Cola</td>
+                        <td>Food and Beverages</td>
+                        <td>Gram Food Pvt. Ltd</td>
+                        <td>45</td>
+                        <td>100</td>
+                        <td>48</td>
+                        <td>0</td>
+                        <td>2160 PKR</td>
+                        <td>0 PKR</td>
+                        <td>
+                            <div class="action-btns">
+                                <div class="edit-btn-container">
+                                    <a href="#"><button class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></a>
+                                </div>
+                                <div class="delete-btn-container">
+
+
+                                    <a href="#"><button class="delete-btn"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
