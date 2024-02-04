@@ -11,12 +11,20 @@ namespace QuickPOS.Controllers
         // GET: Sales
         public ActionResult Sales()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Login");
         }
 
         public ActionResult SalesReport()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Login");
         }
     }
 }

@@ -12,21 +12,37 @@ namespace QuickPOS.Controllers
 
         public ActionResult Products()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Login");
         }
 
         public ActionResult AddProduct()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Login");
         }
         public ActionResult EditProduct()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Login");
         }
 
         public ActionResult DeleteProduct()
         {
-            return View();
+            if (Session["Username"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Login");
         }
 
 
